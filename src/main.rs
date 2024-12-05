@@ -1,14 +1,19 @@
-fn main() {
-    println!("Hello, world!");
-
-    let ans = is_even(20);
-    println!("{}", ans);
+struct Rect {
+    w: i32,
+    h: i32,
 }
 
-fn is_even(num: i32) -> bool {
-    if num % 2 == 0 {
-        return true;
-    } else {
-        return false;
+impl Rect {
+    fn area(&self) -> i32 {
+        self.w * self.h
     }
+    fn perimeter(&self) -> i32 {
+        2 * (self.w + self.h)
+    }
+}
+
+fn main() {
+    let are = Rect { w: 3, h: 5 };
+    println!("{}", are.area());
+    println!("{}", are.perimeter());
 }
